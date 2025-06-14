@@ -11,6 +11,7 @@ const Register = () => {
     username: "",
     password: "",
   });
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -20,7 +21,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = axios.post("http://localhost:8080/user/register", user);
+      const res = axios.post(`${apiUrl}/user/register`, user);
       alert((await res).statusText);
       navigate("/login");
     } catch (err) {

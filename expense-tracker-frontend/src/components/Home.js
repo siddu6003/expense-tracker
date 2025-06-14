@@ -7,11 +7,12 @@ import Transactions from "./Transactions";
 const Home = () => {
   const [transactions, setTransactions] = useState([]);
   const [error, setError] = useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/transactions/getTransactions", {
+        const res = await axios.get(`${apiUrl}/transactions/getTransactions`, {
           withCredentials: true, // include session cookie (JSESSIONID)
         });
         setTransactions(res.data);
@@ -27,7 +28,6 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <h2>Welcome to Expense Tracker</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <Transactions/>
     </div>

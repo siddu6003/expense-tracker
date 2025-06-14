@@ -6,9 +6,10 @@ import "./styles/Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleLogout = () => {
-    axios.post("http://localhost:8080/logout", {}, { withCredentials: true })
+    axios.post(`${apiUrl}/logout`, {}, { withCredentials: true })
       .then(() => {
         // Clear local session data if needed
         navigate("/login");

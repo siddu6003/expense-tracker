@@ -1,0 +1,34 @@
+spring:
+  logging:
+    level:
+      org.flywaydb.core: DEBUG
+  datasource:
+    url: jdbc:mysql://db:3306/expense_tracker?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: siddu1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 600000
+      connection-timeout: 30000
+  application:
+    name: expensetracker
+    port: 8000
+  flyway:
+    enabled: true
+    # Locations of migration files (multiple locations are supported)
+    locations:
+      - classpath:db/migration/schema
+      - classpath:db/migration/indexes
+      - classpath:db/migration/views
+      - classpath:db/migration/procedures
+
+    # Flyway can be used to create the schema if it's not present in the DB
+    baseline-on-migrate: true
+
+    # Flyway validation mode (useful for production environments)
+    validate-on-migrate: true
+
+

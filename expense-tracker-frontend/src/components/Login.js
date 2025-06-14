@@ -10,12 +10,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8080/login",
+        `${apiUrl}/login`,
         new URLSearchParams({ username, password }),
         { withCredentials: true }
       );
