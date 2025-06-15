@@ -84,7 +84,12 @@ public class SecurtiyConfig {
         return new WebMvcConfigurer() {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000")
+                        .allowedOrigins(
+                                "http://localhost:3000",
+                                "http://localhost:80",
+                                "http://rendezvousapp.site",
+                                "http://www.rendezvousapp.site"
+                        )
                         .allowedMethods("*")
                         .allowCredentials(true);
             }
