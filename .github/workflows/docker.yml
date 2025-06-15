@@ -24,7 +24,7 @@ jobs:
         with:
           context: ./expensetracker
           push: true
-          tags: yourusername/expense-backend:latest
+          tags: siddu6003/expense-backend:latest
 
       # Build and push frontend
       - name: Build and Push Frontend
@@ -32,4 +32,4 @@ jobs:
         with:
           context: ./expense-tracker-frontend
           push: true
-          tags: yourusername/expense-frontend:latest
+          tags: siddu6003/expense-frontend:latest
