@@ -15,7 +15,9 @@ spring:
       connection-timeout: 30000
   application:
     name: expensetracker
-    port: 8000
+    port: 8080
+  server:
+    address: 0.0.0.0
   flyway:
     enabled: true
     # Locations of migration files (multiple locations are supported)
