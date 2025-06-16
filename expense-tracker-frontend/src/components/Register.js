@@ -23,7 +23,7 @@ const Register = () => {
     try {
       const res = axios.post(`${apiUrl}/user/register`, user);
       alert((await res).statusText);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.error("Registration failed: Username already exists");
       alert("Registration failed. Try again.");

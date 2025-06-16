@@ -12,7 +12,7 @@ const Navbar = () => {
     axios.post(`${apiUrl}/logout`, {}, { withCredentials: true })
       .then(() => {
         // Clear local session data if needed
-        navigate("/login");
+        navigate("/");
       })
       .catch((error) => {
         console.error("Logout failed:", error);
