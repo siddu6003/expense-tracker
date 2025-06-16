@@ -87,8 +87,8 @@ public class SecurtiyConfig {
                         .allowedOrigins(
                                 "http://localhost:3000",
                                 "http://localhost:80",
-                                "http://rendezvousapp.site",
-                                "http://www.rendezvousapp.site"
+                                "https://rendezvousapp.site",
+                                "https://www.rendezvousapp.site"
                         )
                         .allowedMethods("*")
                         .allowCredentials(true);
