@@ -90,8 +90,8 @@ public class TransactionRepository {
                     transaction.setDescription(rs.getString("description"));
                     transaction.setAmount(rs.getBigDecimal("amount"));
                     transaction.setCategoryId(rs.getLong("category_id"));
-                    transaction.setCreatedAt(rs.getTimestamp("created_at"));
-                    transaction.setUpdatedAt(rs.getTimestamp("updated_at"));
+                    transaction.setCreatedAt(rs.getDate("created_at"));
+                    transaction.setUpdatedAt(rs.getDate("updated_at"));
 
                     transactions.add(transaction);
                 }

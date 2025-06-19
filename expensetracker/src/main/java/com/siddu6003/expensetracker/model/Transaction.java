@@ -4,7 +4,7 @@ package com.siddu6003.expensetracker.model;
 import com.siddu6003.expensetracker.enums.TransactionType;
 
 import java.math.BigDecimal;
-import java.sql.Blob;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Transaction {
@@ -15,15 +15,15 @@ public class Transaction {
     private BigDecimal amount;
     private Long categoryId;
     private TransactionType type; // CREDIT or DEBIT
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
+    private Date createdAt;
+    private Date updatedAt;
 
     // Constructors
     public Transaction() {
     }
 
     public Transaction(Long transactionId, Long userId, String description, BigDecimal amount,
-                       Long categoryId, TransactionType type, Timestamp createdAt, Timestamp updatedAt) {
+                       Long categoryId, TransactionType type, Date createdAt, Date updatedAt) {
         this.transactionId = transactionId;
         this.userId = userId;
         this.description = description;
@@ -83,19 +83,19 @@ public class Transaction {
         this.type = type;
     }
 
-    public Timestamp getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Timestamp updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

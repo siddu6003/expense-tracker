@@ -107,10 +107,8 @@ const Transactions = () => {
       <table className="transaction-table">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Description</th>
+            <th>Note</th>
             <th>Amount</th>
-            <th>Created Date</th>
             <th>Updated Date</th>
             <th>Actions</th>
           </tr>
@@ -118,10 +116,8 @@ const Transactions = () => {
         <tbody>
           {transactions.map((tx) => (
             <tr key={tx.transactionId}>
-              <td>{tx.transactionId}</td>
               <td>{tx.description}</td>
               <td>₹{tx.amount}</td>
-              <td>{tx.createdAt}</td>
               <td>{tx.updatedAt}</td>
               <td>
                 <button onClick={() => handleUpdate(tx)} className="update-btn">Update</button>
