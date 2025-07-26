@@ -1,7 +1,7 @@
 /* styles/Transactions.css */
 
 .transaction-container {
-  max-width: 1000px;
+  width: 90%;
   margin: 2rem auto;
   padding: 1.5rem;
   background-color: #ffffff;
@@ -9,6 +9,8 @@
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .transaction-container h2 {
@@ -20,7 +22,6 @@
 
 .transaction-table {
   width: 100%;
-  min-width: 600px;
   border-collapse: collapse;
 }
 

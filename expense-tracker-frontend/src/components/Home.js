@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from './Navbar'
 import Transactions from "./Transactions";
+import Dashboard from "./Dashboard";
+import "./styles/Home.css";
 
 const Home = () => {
   const [transactions, setTransactions] = useState([]);
@@ -26,9 +28,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-container">
       <Navbar />
       {error && <p style={{ color: "red" }}>{error}</p>}
+      <Dashboard/>
       <Transactions/>
     </div>
   );

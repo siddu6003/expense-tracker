@@ -31,4 +31,8 @@ public class TransactionService {
     public List<Transaction> getTransactionsByUser() {
         return transactionRepository.getTransactionsByUser();
     }
+
+    public Long getTotalAmount() {
+        return transactionRepository.getTotalAmount();
+    }
 }

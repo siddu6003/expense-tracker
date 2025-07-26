@@ -33,4 +33,9 @@ public class TransactionController {
     public List<Transaction> getTransactions() {
         return transactionService.getTransactionsByUser();
     }
+
+    @GetMapping("/getTotalAmount")
+    public Long getTotalAmount() {
+        return transactionService.getTotalAmount();
+    }
 }

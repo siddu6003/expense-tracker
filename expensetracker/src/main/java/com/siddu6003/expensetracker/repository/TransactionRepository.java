@@ -104,4 +104,28 @@ public class TransactionRepository {
         return transactions;
     }
 
+    public Long getTotalAmount() {
+        Long userId = userContext.getUserId();
+        Long amount = 0L;
+
+        String query = "SELECT SUM(amount) FROM transactions WHERE user_id = ?";
+
+        try (Connection conn = dataBaseConnection.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setLong(1, userId);
+
+            try (ResultSet resultSet = stmt.executeQuery()) {
+                while (resultSet.next()) {
+                    amount = resultSet.getLong(1);
+                    break;
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return amount;
+    }
+
 }

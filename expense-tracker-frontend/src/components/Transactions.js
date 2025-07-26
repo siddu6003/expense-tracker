@@ -86,7 +86,7 @@ const Transactions = () => {
 
   return (
     <div className="transaction-container">
-      <h2>Your Expenses</h2>
+      <h2>Your Transactions</h2>
 
       <button
         onClick={() => setShowModal(true)}
@@ -98,7 +98,9 @@ const Transactions = () => {
           color: "white",
           border: "none",
           borderRadius: "8px",
-          cursor: "pointer"
+          cursor: "pointer",
+          width: "max-content",
+          alignSelf: "flex-end"
         }}
       >
         + Add Expense
